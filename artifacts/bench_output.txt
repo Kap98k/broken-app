@@ -1,0 +1,388 @@
+    Finished `bench` profile [optimized] target(s) in 0.12s
+     Running benches/criterion.rs (target/release/deps/criterion-9d66b350a7d7fb1f)
+Gnuplot not found, using plotters backend
+→ Running group: lib/sum_even
+Benchmarking lib/sum_even/n=100
+Benchmarking lib/sum_even/n=100: Warming up for 2.0000 s
+Benchmarking lib/sum_even/n=100: Collecting 100 samples in estimated 5.0001 s (259M iterations)
+Benchmarking lib/sum_even/n=100: Analyzing
+lib/sum_even/n=100      time:   [19.231 ns 19.318 ns 19.415 ns]
+                        thrpt:  [5.1506 Gelem/s 5.1764 Gelem/s 5.2000 Gelem/s]
+                 change:
+                        time:   [-18.692% -16.757% -14.668%] (p = 0.00 < 0.05)
+                        thrpt:  [+17.190% +20.131% +22.989%]
+                        Performance has improved.
+Found 8 outliers among 100 measurements (8.00%)
+  4 (4.00%) high mild
+  4 (4.00%) high severe
+Benchmarking lib/sum_even/n=50_000
+Benchmarking lib/sum_even/n=50_000: Warming up for 2.0000 s
+Benchmarking lib/sum_even/n=50_000: Collecting 100 samples in estimated 5.0236 s (535k iterations)
+Benchmarking lib/sum_even/n=50_000: Analyzing
+lib/sum_even/n=50_000   time:   [9.5510 µs 9.6406 µs 9.7474 µs]
+                        thrpt:  [5.1296 Gelem/s 5.1864 Gelem/s 5.2350 Gelem/s]
+                 change:
+                        time:   [-18.262% -16.029% -13.819%] (p = 0.00 < 0.05)
+                        thrpt:  [+16.035% +19.089% +22.342%]
+                        Performance has improved.
+Found 3 outliers among 100 measurements (3.00%)
+  3 (3.00%) high mild
+Benchmarking lib/sum_even/n=500_000
+Benchmarking lib/sum_even/n=500_000: Warming up for 2.0000 s
+Benchmarking lib/sum_even/n=500_000: Collecting 100 samples in estimated 5.0830 s (50k iterations)
+Benchmarking lib/sum_even/n=500_000: Analyzing
+lib/sum_even/n=500_000  time:   [96.205 µs 97.015 µs 97.875 µs]
+                        thrpt:  [5.1086 Gelem/s 5.1539 Gelem/s 5.1972 Gelem/s]
+                 change:
+                        time:   [-23.065% -20.724% -18.347%] (p = 0.00 < 0.05)
+                        thrpt:  [+22.470% +26.142% +29.980%]
+                        Performance has improved.
+Found 11 outliers among 100 measurements (11.00%)
+  2 (2.00%) low mild
+  5 (5.00%) high mild
+  4 (4.00%) high severe
+
+→ Running group: lib/normalize
+Benchmarking lib/normalize/short
+Benchmarking lib/normalize/short: Warming up for 2.0000 s
+Benchmarking lib/normalize/short: Collecting 100 samples in estimated 5.0000 s (100M iterations)
+Benchmarking lib/normalize/short: Analyzing
+lib/normalize/short     time:   [50.933 ns 53.025 ns 55.252 ns]
+                        thrpt:  [224.39 MiB/s 233.81 MiB/s 243.41 MiB/s]
+                 change:
+                        time:   [-3.0814% -1.0671% +1.2907%] (p = 0.33 > 0.05)
+                        thrpt:  [-1.2743% +1.0786% +3.1793%]
+                        No change in performance detected.
+Found 7 outliers among 100 measurements (7.00%)
+  1 (1.00%) high mild
+  6 (6.00%) high severe
+Benchmarking lib/normalize/medium_10x
+Benchmarking lib/normalize/medium_10x: Warming up for 2.0000 s
+Benchmarking lib/normalize/medium_10x: Collecting 100 samples in estimated 5.0040 s (6.2M iterations)
+Benchmarking lib/normalize/medium_10x: Analyzing
+lib/normalize/medium_10x
+                        time:   [815.82 ns 830.43 ns 845.76 ns]
+                        thrpt:  [575.07 MiB/s 585.69 MiB/s 596.18 MiB/s]
+                 change:
+                        time:   [+24.432% +28.195% +32.876%] (p = 0.00 < 0.05)
+                        thrpt:  [-24.742% -21.994% -19.635%]
+                        Performance has regressed.
+Found 5 outliers among 100 measurements (5.00%)
+  1 (1.00%) low mild
+  2 (2.00%) high mild
+  2 (2.00%) high severe
+Benchmarking lib/normalize/large_100x
+Benchmarking lib/normalize/large_100x: Warming up for 2.0000 s
+Benchmarking lib/normalize/large_100x: Collecting 100 samples in estimated 5.0324 s (763k iterations)
+Benchmarking lib/normalize/large_100x: Analyzing
+lib/normalize/large_100x
+                        time:   [6.1100 µs 6.2593 µs 6.4331 µs]
+                        thrpt:  [756.05 MiB/s 777.04 MiB/s 796.04 MiB/s]
+                 change:
+                        time:   [+21.826% +26.820% +32.909%] (p = 0.00 < 0.05)
+                        thrpt:  [-24.760% -21.148% -17.916%]
+                        Performance has regressed.
+Found 6 outliers among 100 measurements (6.00%)
+  5 (5.00%) high mild
+  1 (1.00%) high severe
+Benchmarking lib/normalize/whitespace_only
+Benchmarking lib/normalize/whitespace_only: Warming up for 2.0000 s
+Benchmarking lib/normalize/whitespace_only: Collecting 100 samples in estimated 5.0015 s (9.7M iterations)
+Benchmarking lib/normalize/whitespace_only: Analyzing
+lib/normalize/whitespace_only
+                        time:   [508.09 ns 520.01 ns 533.64 ns]
+                        thrpt:  [1.7452 GiB/s 1.7910 GiB/s 1.8330 GiB/s]
+                 change:
+                        time:   [+26.835% +31.392% +37.535%] (p = 0.00 < 0.05)
+                        thrpt:  [-27.291% -23.892% -21.157%]
+                        Performance has regressed.
+Found 4 outliers among 100 measurements (4.00%)
+  3 (3.00%) high mild
+  1 (1.00%) high severe
+
+→ Running group: lib/leak_buffer
+Benchmarking lib/leak_buffer/all_nonzero_10k
+Benchmarking lib/leak_buffer/all_nonzero_10k: Warming up for 2.0000 s
+Benchmarking lib/leak_buffer/all_nonzero_10k: Collecting 100 samples in estimated 5.0065 s (1.4M iterations)
+Benchmarking lib/leak_buffer/all_nonzero_10k: Analyzing
+lib/leak_buffer/all_nonzero_10k
+                        time:   [3.6107 µs 3.6756 µs 3.7554 µs]
+                        thrpt:  [2.4799 GiB/s 2.5338 GiB/s 2.5793 GiB/s]
+                 change:
+                        time:   [+2.6281% +5.3598% +8.6559%] (p = 0.00 < 0.05)
+                        thrpt:  [-7.9663% -5.0871% -2.5608%]
+                        Performance has regressed.
+Found 7 outliers among 100 measurements (7.00%)
+  5 (5.00%) high mild
+  2 (2.00%) high severe
+Benchmarking lib/leak_buffer/all_zero_10k
+Benchmarking lib/leak_buffer/all_zero_10k: Warming up for 2.0000 s
+Benchmarking lib/leak_buffer/all_zero_10k: Collecting 100 samples in estimated 5.0107 s (1.3M iterations)
+Benchmarking lib/leak_buffer/all_zero_10k: Analyzing
+lib/leak_buffer/all_zero_10k
+                        time:   [3.5499 µs 3.6255 µs 3.7267 µs]
+                        thrpt:  [2.4990 GiB/s 2.5688 GiB/s 2.6235 GiB/s]
+                 change:
+                        time:   [-0.6690% +2.9032% +8.4310%] (p = 0.24 > 0.05)
+                        thrpt:  [-7.7755% -2.8213% +0.6735%]
+                        No change in performance detected.
+Found 4 outliers among 100 measurements (4.00%)
+  1 (1.00%) high mild
+  3 (3.00%) high severe
+Benchmarking lib/leak_buffer/mixed_10k
+Benchmarking lib/leak_buffer/mixed_10k: Warming up for 2.0000 s
+Benchmarking lib/leak_buffer/mixed_10k: Collecting 100 samples in estimated 5.0151 s (1.4M iterations)
+Benchmarking lib/leak_buffer/mixed_10k: Analyzing
+lib/leak_buffer/mixed_10k
+                        time:   [3.6142 µs 3.6630 µs 3.7162 µs]
+                        thrpt:  [2.5061 GiB/s 2.5425 GiB/s 2.5768 GiB/s]
+                 change:
+                        time:   [-10.100% -8.0024% -6.0101%] (p = 0.00 < 0.05)
+                        thrpt:  [+6.3944% +8.6985% +11.234%]
+                        Performance has improved.
+Found 1 outliers among 100 measurements (1.00%)
+  1 (1.00%) low mild
+Benchmarking lib/leak_buffer/all_nonzero_1M
+Benchmarking lib/leak_buffer/all_nonzero_1M: Warming up for 2.0000 s
+Benchmarking lib/leak_buffer/all_nonzero_1M: Collecting 100 samples in estimated 5.4300 s (15k iterations)
+Benchmarking lib/leak_buffer/all_nonzero_1M: Analyzing
+lib/leak_buffer/all_nonzero_1M
+                        time:   [366.48 µs 370.75 µs 375.09 µs]
+                        thrpt:  [2.4829 GiB/s 2.5120 GiB/s 2.5413 GiB/s]
+                 change:
+                        time:   [-5.3671% -3.2873% -1.1771%] (p = 0.00 < 0.05)
+                        thrpt:  [+1.1911% +3.3990% +5.6715%]
+                        Change within noise threshold.
+Found 4 outliers among 100 measurements (4.00%)
+  2 (2.00%) high mild
+  2 (2.00%) high severe
+
+→ Running group: lib/average_positive
+Benchmarking lib/average_positive/mixed_10k
+Benchmarking lib/average_positive/mixed_10k: Warming up for 2.0000 s
+Benchmarking lib/average_positive/mixed_10k: Collecting 100 samples in estimated 5.0108 s (1.3M iterations)
+Benchmarking lib/average_positive/mixed_10k: Analyzing
+lib/average_positive/mixed_10k
+                        time:   [4.1470 µs 4.2092 µs 4.2773 µs]
+                        thrpt:  [2.3379 Gelem/s 2.3757 Gelem/s 2.4114 Gelem/s]
+                 change:
+                        time:   [+5.1382% +9.1780% +14.192%] (p = 0.00 < 0.05)
+                        thrpt:  [-12.428% -8.4065% -4.8871%]
+                        Performance has regressed.
+Found 2 outliers among 100 measurements (2.00%)
+  2 (2.00%) high severe
+Benchmarking lib/average_positive/all_positive_10k
+Benchmarking lib/average_positive/all_positive_10k: Warming up for 2.0000 s
+Benchmarking lib/average_positive/all_positive_10k: Collecting 100 samples in estimated 5.0083 s (1.2M iterations)
+Benchmarking lib/average_positive/all_positive_10k: Analyzing
+lib/average_positive/all_positive_10k
+                        time:   [3.6997 µs 3.8037 µs 3.9235 µs]
+                        thrpt:  [2.5488 Gelem/s 2.6290 Gelem/s 2.7029 Gelem/s]
+                 change:
+                        time:   [+2.5132% +5.6703% +8.9889%] (p = 0.00 < 0.05)
+                        thrpt:  [-8.2475% -5.3660% -2.4516%]
+                        Performance has regressed.
+Found 2 outliers among 100 measurements (2.00%)
+  2 (2.00%) high mild
+Benchmarking lib/average_positive/all_negative_10k
+Benchmarking lib/average_positive/all_negative_10k: Warming up for 2.0000 s
+Benchmarking lib/average_positive/all_negative_10k: Collecting 100 samples in estimated 5.0032 s (1.5M iterations)
+Benchmarking lib/average_positive/all_negative_10k: Analyzing
+lib/average_positive/all_negative_10k
+                        time:   [3.3799 µs 3.4156 µs 3.4534 µs]
+                        thrpt:  [2.8957 Gelem/s 2.9278 Gelem/s 2.9586 Gelem/s]
+                 change:
+                        time:   [-12.094% -10.290% -8.3586%] (p = 0.00 < 0.05)
+                        thrpt:  [+9.1210% +11.470% +13.758%]
+                        Performance has improved.
+Found 4 outliers among 100 measurements (4.00%)
+  3 (3.00%) high mild
+  1 (1.00%) high severe
+Benchmarking lib/average_positive/mixed_100k
+Benchmarking lib/average_positive/mixed_100k: Warming up for 2.0000 s
+Benchmarking lib/average_positive/mixed_100k: Collecting 100 samples in estimated 5.1830 s (141k iterations)
+Benchmarking lib/average_positive/mixed_100k: Analyzing
+lib/average_positive/mixed_100k
+                        time:   [35.015 µs 35.409 µs 35.851 µs]
+                        thrpt:  [2.7893 Gelem/s 2.8242 Gelem/s 2.8559 Gelem/s]
+                 change:
+                        time:   [-9.9859% -7.8014% -5.2295%] (p = 0.00 < 0.05)
+                        thrpt:  [+5.5181% +8.4615% +11.094%]
+                        Performance has improved.
+Found 10 outliers among 100 measurements (10.00%)
+  9 (9.00%) high mild
+  1 (1.00%) high severe
+
+→ Running group: algo/slow_fib
+Benchmarking algo/slow_fib/n=10
+Benchmarking algo/slow_fib/n=10: Warming up for 2.0000 s
+Benchmarking algo/slow_fib/n=10: Collecting 100 samples in estimated 5.0000 s (3.0B iterations)
+Benchmarking algo/slow_fib/n=10: Analyzing
+algo/slow_fib/n=10      time:   [1.6609 ns 1.6833 ns 1.7063 ns]
+                        change: [-14.203% -12.362% -10.583%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 3 outliers among 100 measurements (3.00%)
+  2 (2.00%) high mild
+  1 (1.00%) high severe
+Benchmarking algo/slow_fib/n=20
+Benchmarking algo/slow_fib/n=20: Warming up for 2.0000 s
+Benchmarking algo/slow_fib/n=20: Collecting 100 samples in estimated 5.0000 s (1.9B iterations)
+Benchmarking algo/slow_fib/n=20: Analyzing
+algo/slow_fib/n=20      time:   [2.5828 ns 2.6060 ns 2.6312 ns]
+                        change: [-17.353% -15.065% -13.052%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 2 outliers among 100 measurements (2.00%)
+  2 (2.00%) high mild
+Benchmarking algo/slow_fib/n=30
+Benchmarking algo/slow_fib/n=30: Warming up for 2.0000 s
+Benchmarking algo/slow_fib/n=30: Collecting 100 samples in estimated 5.0000 s (1.2B iterations)
+Benchmarking algo/slow_fib/n=30: Analyzing
+algo/slow_fib/n=30      time:   [3.8454 ns 3.8734 ns 3.9030 ns]
+                        change: [-18.151% -15.494% -12.676%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 3 outliers among 100 measurements (3.00%)
+  2 (2.00%) high mild
+  1 (1.00%) high severe
+Benchmarking algo/slow_fib/n=35
+Benchmarking algo/slow_fib/n=35: Warming up for 2.0000 s
+Benchmarking algo/slow_fib/n=35: Collecting 100 samples in estimated 5.0000 s (1.4B iterations)
+Benchmarking algo/slow_fib/n=35: Analyzing
+algo/slow_fib/n=35      time:   [3.4629 ns 3.4882 ns 3.5170 ns]
+                        change: [-11.868% -10.301% -8.7305%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 9 outliers among 100 measurements (9.00%)
+  5 (5.00%) high mild
+  4 (4.00%) high severe
+Benchmarking algo/slow_fib/n=40
+Benchmarking algo/slow_fib/n=40: Warming up for 2.0000 s
+Benchmarking algo/slow_fib/n=40: Collecting 100 samples in estimated 5.0000 s (988M iterations)
+Benchmarking algo/slow_fib/n=40: Analyzing
+algo/slow_fib/n=40      time:   [4.9195 ns 4.9570 ns 5.0046 ns]
+                        change: [-17.209% -13.002% -9.1438%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 3 outliers among 100 measurements (3.00%)
+  1 (1.00%) high mild
+  2 (2.00%) high severe
+
+→ Running group: algo/slow_dedup
+Benchmarking algo/slow_dedup/all_unique_n=500
+Benchmarking algo/slow_dedup/all_unique_n=500: Warming up for 2.0000 s
+Benchmarking algo/slow_dedup/all_unique_n=500: Collecting 100 samples in estimated 5.0248 s (793k iterations)
+Benchmarking algo/slow_dedup/all_unique_n=500: Analyzing
+algo/slow_dedup/all_unique_n=500
+                        time:   [4.4434 µs 4.5228 µs 4.6126 µs]
+                        thrpt:  [108.40 Melem/s 110.55 Melem/s 112.53 Melem/s]
+                 change:
+                        time:   [-7.4653% -5.5173% -3.3345%] (p = 0.00 < 0.05)
+                        thrpt:  [+3.4495% +5.8394% +8.0676%]
+                        Performance has improved.
+Found 7 outliers among 100 measurements (7.00%)
+  5 (5.00%) high mild
+  2 (2.00%) high severe
+Benchmarking algo/slow_dedup/all_same_n=500
+Benchmarking algo/slow_dedup/all_same_n=500: Warming up for 2.0000 s
+Benchmarking algo/slow_dedup/all_same_n=500: Collecting 100 samples in estimated 5.0005 s (899k iterations)
+Benchmarking algo/slow_dedup/all_same_n=500: Analyzing
+algo/slow_dedup/all_same_n=500
+                        time:   [3.8146 µs 3.8724 µs 3.9300 µs]
+                        thrpt:  [127.23 Melem/s 129.12 Melem/s 131.07 Melem/s]
+                 change:
+                        time:   [-3.5083% -0.1749% +3.7527%] (p = 0.93 > 0.05)
+                        thrpt:  [-3.6170% +0.1752% +3.6358%]
+                        No change in performance detected.
+Found 3 outliers among 100 measurements (3.00%)
+  1 (1.00%) high mild
+  2 (2.00%) high severe
+Benchmarking algo/slow_dedup/half_dup_n=1000
+Benchmarking algo/slow_dedup/half_dup_n=1000: Warming up for 2.0000 s
+Benchmarking algo/slow_dedup/half_dup_n=1000: Collecting 100 samples in estimated 5.0598 s (424k iterations)
+Benchmarking algo/slow_dedup/half_dup_n=1000: Analyzing
+algo/slow_dedup/half_dup_n=1000
+                        time:   [9.8604 µs 10.025 µs 10.209 µs]
+                        thrpt:  [97.954 Melem/s 99.754 Melem/s 101.42 Melem/s]
+                 change:
+                        time:   [+9.8772% +16.093% +21.389%] (p = 0.00 < 0.05)
+                        thrpt:  [-17.620% -13.862% -8.9893%]
+                        Performance has regressed.
+Found 3 outliers among 100 measurements (3.00%)
+  2 (2.00%) high mild
+  1 (1.00%) high severe
+Benchmarking algo/slow_dedup/half_dup_n=100
+Benchmarking algo/slow_dedup/half_dup_n=100: Warming up for 2.0000 s
+Benchmarking algo/slow_dedup/half_dup_n=100: Collecting 100 samples in estimated 5.0029 s (4.3M iterations)
+Benchmarking algo/slow_dedup/half_dup_n=100: Analyzing
+algo/slow_dedup/half_dup_n=100
+                        time:   [1.0262 µs 1.0405 µs 1.0550 µs]
+                        thrpt:  [94.790 Melem/s 96.107 Melem/s 97.447 Melem/s]
+                 change:
+                        time:   [+10.023% +13.595% +17.788%] (p = 0.00 < 0.05)
+                        thrpt:  [-15.101% -11.968% -9.1100%]
+                        Performance has regressed.
+Found 2 outliers among 100 measurements (2.00%)
+  1 (1.00%) low mild
+  1 (1.00%) high severe
+
+→ Running group: concurrency/race_increment
+Benchmarking concurrency/race_increment/1_thread_10k_iter
+Benchmarking concurrency/race_increment/1_thread_10k_iter: Warming up for 2.0000 s
+Benchmarking concurrency/race_increment/1_thread_10k_iter: Collecting 100 samples in estimated 5.6128 s (15k iterations)
+Benchmarking concurrency/race_increment/1_thread_10k_iter: Analyzing
+concurrency/race_increment/1_thread_10k_iter
+                        time:   [342.16 µs 362.50 µs 379.39 µs]
+                        change: [+13.180% +16.518% +19.514%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 6 outliers among 100 measurements (6.00%)
+  2 (2.00%) low severe
+  1 (1.00%) low mild
+  3 (3.00%) high mild
+Benchmarking concurrency/race_increment/2_threads_10k_iter
+Benchmarking concurrency/race_increment/2_threads_10k_iter: Warming up for 2.0000 s
+Benchmarking concurrency/race_increment/2_threads_10k_iter: Collecting 100 samples in estimated 6.4356 s (15k iterations)
+Benchmarking concurrency/race_increment/2_threads_10k_iter: Analyzing
+concurrency/race_increment/2_threads_10k_iter
+                        time:   [406.30 µs 420.05 µs 435.44 µs]
+                        change: [+1.5395% +4.7823% +8.1987%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 5 outliers among 100 measurements (5.00%)
+  1 (1.00%) low severe
+  3 (3.00%) high mild
+  1 (1.00%) high severe
+Benchmarking concurrency/race_increment/4_threads_10k_iter
+Benchmarking concurrency/race_increment/4_threads_10k_iter: Warming up for 2.0000 s
+Benchmarking concurrency/race_increment/4_threads_10k_iter: Collecting 100 samples in estimated 6.7137 s (10k iterations)
+Benchmarking concurrency/race_increment/4_threads_10k_iter: Analyzing
+concurrency/race_increment/4_threads_10k_iter
+                        time:   [640.35 µs 669.90 µs 710.87 µs]
+                        change: [-6.2156% -2.1945% +1.8854%] (p = 0.32 > 0.05)
+                        No change in performance detected.
+Found 5 outliers among 100 measurements (5.00%)
+  1 (1.00%) low mild
+  2 (2.00%) high mild
+  2 (2.00%) high severe
+Benchmarking concurrency/race_increment/8_threads_10k_iter
+Benchmarking concurrency/race_increment/8_threads_10k_iter: Warming up for 2.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 6.0s, enable flat sampling, or reduce sample count to 60.
+Benchmarking concurrency/race_increment/8_threads_10k_iter: Collecting 100 samples in estimated 5.9592 s (5050 iterations)
+Benchmarking concurrency/race_increment/8_threads_10k_iter: Analyzing
+concurrency/race_increment/8_threads_10k_iter
+                        time:   [1.1350 ms 1.1804 ms 1.2515 ms]
+                        change: [-9.2329% -4.7992% -0.2457%] (p = 0.03 < 0.05)
+                        Change within noise threshold.
+Found 4 outliers among 100 measurements (4.00%)
+  3 (3.00%) high mild
+  1 (1.00%) high severe
+
+→ Running group: concurrency/read_after_sleep
+Benchmarking concurrency/read_after_sleep/sleep_10ms
+Benchmarking concurrency/read_after_sleep/sleep_10ms: Warming up for 2.0000 s
+Benchmarking concurrency/read_after_sleep/sleep_10ms: Collecting 100 samples in estimated 6.2154 s (500 iterations)
+Benchmarking concurrency/read_after_sleep/sleep_10ms: Analyzing
+concurrency/read_after_sleep/sleep_10ms
+                        time:   [12.339 ms 12.707 ms 13.102 ms]
+                        change: [+8.8085% +12.827% +16.391%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 9 outliers among 100 measurements (9.00%)
+  8 (8.00%) high mild
+  1 (1.00%) high severe
+

@@ -1,28 +1,26 @@
-/// Намеренно низкопроизводительная реализация.
+/// Оптимизированная реализация: O(n) с HashSet вместо O(n²) + сортировка.
 pub fn slow_dedup(values: &[u64]) -> Vec<u64> {
-    let mut out = Vec::new();
+    use std::collections::HashSet;
+    let mut seen = HashSet::with_capacity(values.len());
+    let mut out = Vec::with_capacity(values.len());
     for v in values {
-        let mut seen = false;
-        for existing in &out {
-            if existing == v {
-                seen = true;
-                break;
-            }
-        }
-        if !seen {
-            // лишняя копия, хотя можно было пушить значение напрямую
+        if seen.insert(*v) {
             out.push(*v);
-            out.sort_unstable(); // бесполезная сортировка на каждой вставке
         }
     }
     out
 }
 
-/// Классическая экспоненциальная реализация без мемоизации — будет медленной на больших n.
+/// Оптимизированная реализация: O(n) итеративный алгоритм вместо O(2ⁿ) рекурсивного.
 pub fn slow_fib(n: u64) -> u64 {
-    match n {
-        0 => 0,
-        1 => 1,
-        _ => slow_fib(n - 1) + slow_fib(n - 2),
+    if n <= 1 {
+        return n;
     }
+    let (mut a, mut b) = (0u64, 1u64);
+    for _ in 2..=n {
+        let c = a.wrapping_add(b);
+        a = b;
+        b = c;
+    }
+    b
 }

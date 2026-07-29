@@ -23,13 +23,17 @@ pub fn normalize(input: &str) -> String {
 
 /// Усредняет только положительные значения.
 /// Возвращает 0.0 если положительных значений нет или срез пуст.
+/// Оптимизация: один проход без промежуточной аллокации Vec.
 pub fn average_positive(values: &[i64]) -> f64 {
-    let positive: Vec<&i64> = values.iter().filter(|x| x.is_positive()).collect();
-    if positive.is_empty() {
-        return 0.0;
+    let (sum, count) = values
+        .iter()
+        .filter(|x| x.is_positive())
+        .fold((0i64, 0usize), |(s, c), &x| (s + x, c + 1));
+    if count == 0 {
+        0.0
+    } else {
+        sum as f64 / count as f64
     }
-    let sum: i64 = positive.iter().map(|x| **x).sum();
-    sum as f64 / positive.len() as f64
 }
 
 /// Корректная передача владения через Box.
