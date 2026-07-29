@@ -1,0 +1,75 @@
+<pre>==97107== Memcheck, a memory error detector
+==97107== Copyright (C) 2002-2026, and GNU GPL&apos;d, by Julian Seward et al.
+==97107== Using Valgrind-3.27.1 and LibVEX; rerun with -h for copyright info
+==97107== Command: ./demo
+==97107== 
+sum_even: 6
+non-zero bytes: 3
+normalize: helloworld
+fib(20): 6765
+dedup: [1, 2, 3, 4]
+==97107== 
+==97107== HEAP SUMMARY:
+==97107==     in use at exit: 548 bytes in 2 blocks
+==97107==   total heap usage: 15 allocs, 13 frees, 3,714 bytes allocated
+==97107== 
+==97107== 4 bytes in 1 blocks are definitely lost in loss record 1 of 2
+==97107==    at 0x48A9AE6: malloc (vg_replace_malloc.c:447)
+==97107==    by 0x4052E3C: &lt;alloc::raw_vec::RawVecInner&gt;::try_allocate_in (in /home/raven/rust_projects/broken-app/target/debug/demo)
+==97107==    by 0x4020327: &lt;alloc::raw_vec::RawVecInner&gt;::with_capacity_in (mod.rs:435)
+==97107==    by 0x401E3C5: with_capacity_in&lt;u8, alloc::alloc::Global&gt; (mod.rs:177)
+==97107==    by 0x401E3C5: with_capacity_in&lt;u8, alloc::alloc::Global&gt; (mod.rs:975)
+==97107==    by 0x401E3C5: &lt;u8 as &lt;[_]&gt;::to_vec_in::ConvertVec&gt;::to_vec::&lt;alloc::alloc::Global&gt; (slice.rs:448)
+==97107==    by 0x401E4AB: to_vec_in&lt;u8, alloc::alloc::Global&gt; (slice.rs:400)
+==97107==    by 0x401E4AB: &lt;[u8]&gt;::to_vec (slice.rs:376)
+==97107==    by 0x401C14C: broken_app::leak_buffer (lib.rs:24)
+==97107==    by 0x401B7B9: demo::main (demo.rs:8)
+==97107==    by 0x401B53A: &lt;fn() as core::ops::function::FnOnce&lt;()&gt;&gt;::call_once (function.rs:250)
+==97107==    by 0x401B6BD: std::sys::backtrace::__rust_begin_short_backtrace::&lt;fn(), ()&gt; (backtrace.rs:166)
+==97107==    by 0x401B5E0: std::rt::lang_start::&lt;()&gt;::{closure#0} (rt.rs:206)
+==97107==    by 0x4048F76: call_once&lt;(), (dyn core::ops::function::Fn&lt;(), Output=i32&gt; + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)&gt; (function.rs:287)
+==97107==    by 0x4048F76: do_call&lt;&amp;(dyn core::ops::function::Fn&lt;(), Output=i32&gt; + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32&gt; (panicking.rs:576)
+==97107==    by 0x4048F76: catch_unwind&lt;i32, &amp;(dyn core::ops::function::Fn&lt;(), Output=i32&gt; + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)&gt; (panicking.rs:544)
+==97107==    by 0x4048F76: catch_unwind&lt;&amp;(dyn core::ops::function::Fn&lt;(), Output=i32&gt; + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32&gt; (panic.rs:359)
+==97107==    by 0x4048F76: {closure#0} (rt.rs:175)
+==97107==    by 0x4048F76: do_call&lt;std::rt::lang_start_internal::{closure_env#0}, isize&gt; (panicking.rs:576)
+==97107==    by 0x4048F76: catch_unwind&lt;isize, std::rt::lang_start_internal::{closure_env#0}&gt; (panicking.rs:544)
+==97107==    by 0x4048F76: catch_unwind&lt;std::rt::lang_start_internal::{closure_env#0}, isize&gt; (panic.rs:359)
+==97107==    by 0x4048F76: std::rt::lang_start_internal (rt.rs:171)
+==97107==    by 0x401B5C6: std::rt::lang_start::&lt;()&gt; (rt.rs:205)
+==97107== 
+==97107== 544 bytes in 1 blocks are still reachable in loss record 2 of 2
+==97107==    at 0x48A9AE6: malloc (vg_replace_malloc.c:447)
+==97107==    by 0x404B789: alloc (alloc.rs:124)
+==97107==    by 0x404B789: alloc_impl_runtime (alloc.rs:296)
+==97107==    by 0x404B789: alloc_impl (alloc.rs:418)
+==97107==    by 0x404B789: allocate (alloc.rs:535)
+==97107==    by 0x404B789: try_new_uninit_in&lt;alloc::collections::btree::node::LeafNode&lt;usize, std::sys::pal::unix::stack_overflow::thread_info::ThreadInfo&gt;, alloc::alloc::Global&gt; (boxed.rs:619)
+==97107==    by 0x404B789: new_uninit_in&lt;alloc::collections::btree::node::LeafNode&lt;usize, std::sys::pal::unix::stack_overflow::thread_info::ThreadInfo&gt;, alloc::alloc::Global&gt; (boxed.rs:586)
+==97107==    by 0x404B789: new&lt;usize, std::sys::pal::unix::stack_overflow::thread_info::ThreadInfo, alloc::alloc::Global&gt; (node.rs:87)
+==97107==    by 0x404B789: new_leaf&lt;usize, std::sys::pal::unix::stack_overflow::thread_info::ThreadInfo, alloc::alloc::Global&gt; (node.rs:225)
+==97107==    by 0x404B789: insert_entry&lt;usize, std::sys::pal::unix::stack_overflow::thread_info::ThreadInfo, alloc::alloc::Global&gt; (entry.rs:452)
+==97107==    by 0x404B789: insert&lt;usize, std::sys::pal::unix::stack_overflow::thread_info::ThreadInfo, alloc::alloc::Global&gt; (entry.rs:426)
+==97107==    by 0x404B789: insert&lt;usize, std::sys::pal::unix::stack_overflow::thread_info::ThreadInfo, alloc::alloc::Global&gt; (map.rs:1052)
+==97107==    by 0x404B789: std::sys::pal::unix::stack_overflow::thread_info::set_current_info (thread_info.rs:122)
+==97107==    by 0x4048EAF: init (stack_overflow.rs:179)
+==97107==    by 0x4048EAF: init (mod.rs:39)
+==97107==    by 0x4048EAF: init (rt.rs:118)
+==97107==    by 0x4048EAF: {closure#0} (rt.rs:173)
+==97107==    by 0x4048EAF: do_call&lt;std::rt::lang_start_internal::{closure_env#0}, isize&gt; (panicking.rs:576)
+==97107==    by 0x4048EAF: catch_unwind&lt;isize, std::rt::lang_start_internal::{closure_env#0}&gt; (panicking.rs:544)
+==97107==    by 0x4048EAF: catch_unwind&lt;std::rt::lang_start_internal::{closure_env#0}, isize&gt; (panic.rs:359)
+==97107==    by 0x4048EAF: std::rt::lang_start_internal (rt.rs:171)
+==97107==    by 0x401B5C6: std::rt::lang_start::&lt;()&gt; (rt.rs:205)
+==97107==    by 0x401BA2D: main (in /home/raven/rust_projects/broken-app/target/debug/demo)
+==97107== 
+==97107== LEAK SUMMARY:
+==97107==    definitely lost: 4 bytes in 1 blocks
+==97107==    indirectly lost: 0 bytes in 0 blocks
+==97107==      possibly lost: 0 bytes in 0 blocks
+==97107==    still reachable: 544 bytes in 1 blocks
+==97107==         suppressed: 0 bytes in 0 blocks
+==97107== 
+==97107== For lists of detected and suppressed errors, rerun with: -s
+==97107== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+</pre>

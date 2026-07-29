@@ -1,0 +1,46 @@
+<pre><font color="#2EC27E"><b>raven@fedora</b></font>:<font color="#2EC27E"><b>~/rust_projects/broken-app/target/debug</b></font>$ valgrind --leak-check=full cargo test --tests
+==111356== Memcheck, a memory error detector
+==111356== Copyright (C) 2002-2026, and GNU GPL&apos;d, by Julian Seward et al.
+==111356== Using Valgrind-3.27.1 and LibVEX; rerun with -h for copyright info
+==111356== Command: cargo test --tests
+==111356== 
+<font color="#57E389"><b>    Finished</b></font> `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+<font color="#57E389"><b>     Running</b></font> unittests src/lib.rs (deps/broken_app-394bcb09a0bb0cf0)
+
+running 0 tests
+
+test result: <font color="#2EC27E">ok</font>. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+<font color="#57E389"><b>     Running</b></font> unittests src/bin/demo.rs (deps/demo-629523c3c597e9a0)
+
+running 0 tests
+
+test result: <font color="#2EC27E">ok</font>. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+<font color="#57E389"><b>     Running</b></font> tests/integration.rs (deps/integration-d812a20ffb69d6d0)
+
+running 21 tests
+test average_positive_empty_slice ... <font color="#2EC27E">ok</font>
+test average_positive_mixed ... <font color="#2EC27E">ok</font>
+test dedup_preserves_uniques ... <font color="#2EC27E">ok</font>
+test dedup_all_same ... <font color="#2EC27E">ok</font>
+test average_positive_single_value ... <font color="#2EC27E">ok</font>
+test dedup_empty_slice ... <font color="#2EC27E">ok</font>
+test fib_small_numbers ... <font color="#2EC27E">ok</font>
+test leak_buffer_basic ... <font color="#2EC27E">ok</font>
+test normalize_empty_string ... <font color="#2EC27E">ok</font>
+test average_positive_no_positives ... <font color="#2EC27E">ok</font>
+test normalize_only_whitespace ... <font color="#2EC27E">ok</font>
+test fib_zero_and_one ... <font color="#2EC27E">ok</font>
+test leak_buffer_empty ... <font color="#2EC27E">ok</font>
+test leak_buffer_all_zeros ... <font color="#2EC27E">ok</font>
+test sum_even_all_odd ... <font color="#2EC27E">ok</font>
+test sum_even_basic ... <font color="#2EC27E">ok</font>
+test sum_even_empty_slice ... <font color="#2EC27E">ok</font>
+test normalize_removes_tabs_and_newlines ... <font color="#2EC27E">ok</font>
+test normalize_trims_spaces ... <font color="#2EC27E">ok</font>
+test sum_even_all_negative_even ... <font color="#2EC27E">ok</font>
+test use_after_free_returns_84 ... <font color="#2EC27E">ok</font>
+
+test result: <font color="#2EC27E">ok</font>. 21 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+</pre>
