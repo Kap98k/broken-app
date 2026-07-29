@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Index - Criterion.rs</title>
+    <style type="text/css">
+        body {
+            font: 14px Helvetica Neue;
+            text-rendering: optimizelegibility;
+        }
+
+        .body {
+            width: 960px;
+            margin: auto;
+        }
+
+        a:link {
+            color: #1F78B4;
+            text-decoration: none;
+        }
+
+        h2 {
+            font-size: 36px;
+            font-weight: 300;
+        }
+
+        h3 {
+            font-size: 24px;
+            font-weight: 300;
+        }
+
+        #footer {
+            height: 40px;
+            background: #888;
+            color: white;
+            font-size: larger;
+            font-weight: 300;
+        }
+
+        #footer a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        #footer p {
+            text-align: center
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #888;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="body">
+        <h2>Criterion.rs Benchmark Index</h2>
+        See individual benchmark pages below for more details.
+        <ul>
+            <li><a href="../algo_slow_dedup/report/index.html">algo/slow_dedup</a></li>
+            
+            <ul>
+                <li><a href="../algo_slow_dedup/all_same_n=500/report/index.html">all_same_n=500</a></li>
+                <li><a href="../algo_slow_dedup/all_unique_n=500/report/index.html">all_unique_n=500</a></li>
+                <li><a href="../algo_slow_dedup/half_dup_n=100/report/index.html">half_dup_n=100</a></li>
+                <li><a href="../algo_slow_dedup/half_dup_n=1000/report/index.html">half_dup_n=1000</a></li>
+            </ul>
+            <li><a href="../algo_slow_fib/report/index.html">algo/slow_fib</a></li>
+            
+            <ul>
+                <li><a href="../algo_slow_fib/n=10/report/index.html">n=10</a></li>
+                <li><a href="../algo_slow_fib/n=20/report/index.html">n=20</a></li>
+                <li><a href="../algo_slow_fib/n=30/report/index.html">n=30</a></li>
+                <li><a href="../algo_slow_fib/n=35/report/index.html">n=35</a></li>
+                <li><a href="../algo_slow_fib/n=40/report/index.html">n=40</a></li>
+            </ul>
+            <li><a href="../concurrency_race_increment/report/index.html">concurrency/race_increment</a></li>
+            
+            <ul>
+                <li><a href="../concurrency_race_increment/1_thread_10k_iter/report/index.html">1_thread_10k_iter</a></li>
+                <li><a href="../concurrency_race_increment/2_threads_10k_iter/report/index.html">2_threads_10k_iter</a></li>
+                <li><a href="../concurrency_race_increment/4_threads_10k_iter/report/index.html">4_threads_10k_iter</a></li>
+                <li><a href="../concurrency_race_increment/8_threads_10k_iter/report/index.html">8_threads_10k_iter</a></li>
+            </ul>
+            <li>concurrency/read_after_sleep</li>
+            
+            <ul>
+                <li><a href="../concurrency_read_after_sleep/sleep_10ms/report/index.html">sleep_10ms</a></li>
+            </ul>
+            <li><a href="../lib_average_positive/report/index.html">lib/average_positive</a></li>
+            
+            <ul>
+                <li><a href="../lib_average_positive/all_negative_10k/report/index.html">all_negative_10k</a></li>
+                <li><a href="../lib_average_positive/all_positive_10k/report/index.html">all_positive_10k</a></li>
+                <li><a href="../lib_average_positive/mixed_100k/report/index.html">mixed_100k</a></li>
+                <li><a href="../lib_average_positive/mixed_10k/report/index.html">mixed_10k</a></li>
+            </ul>
+            <li><a href="../lib_leak_buffer/report/index.html">lib/leak_buffer</a></li>
+            
+            <ul>
+                <li><a href="../lib_leak_buffer/all_nonzero_10k/report/index.html">all_nonzero_10k</a></li>
+                <li><a href="../lib_leak_buffer/all_nonzero_1M/report/index.html">all_nonzero_1M</a></li>
+                <li><a href="../lib_leak_buffer/all_zero_10k/report/index.html">all_zero_10k</a></li>
+                <li><a href="../lib_leak_buffer/mixed_10k/report/index.html">mixed_10k</a></li>
+            </ul>
+            <li><a href="../lib_normalize/report/index.html">lib/normalize</a></li>
+            
+            <ul>
+                <li><a href="../lib_normalize/large_100x/report/index.html">large_100x</a></li>
+                <li><a href="../lib_normalize/medium_10x/report/index.html">medium_10x</a></li>
+                <li><a href="../lib_normalize/short/report/index.html">short</a></li>
+                <li><a href="../lib_normalize/whitespace_only/report/index.html">whitespace_only</a></li>
+            </ul>
+            <li><a href="../lib_sum_even/report/index.html">lib/sum_even</a></li>
+            
+            <ul>
+                <li><a href="../lib_sum_even/n=100/report/index.html">n=100</a></li>
+                <li><a href="../lib_sum_even/n=500_000/report/index.html">n=500_000</a></li>
+                <li><a href="../lib_sum_even/n=50_000/report/index.html">n=50_000</a></li>
+            </ul>
+        </ul>
+    </div>
+    <div id="footer">
+        <p>This report was generated by
+            <a href="https://github.com/bheisler/criterion.rs">Criterion.rs</a>, a statistics-driven benchmarking
+            library in Rust.</p>
+    </div>
+</body>
+</html>
