@@ -17,6 +17,10 @@ broken-app/
 ├── benches/
 │   ├── baseline.rs         # Ручные бенчмарки (Instant-based)
 │   └── criterion.rs        # Бенчмарки на criterion (статистический анализ)
+├── scripts/
+│   ├── compare.sh          # Пайплайн: бенчмарки → CSV → сравнительные графики
+│   ├── plot_benches.py     # Генерация графиков из criterion JSON-отчётов
+│   └── profile.sh          # Профилирование через perf (Linux)
 ├── artifacts/
 │   ├── bench_output.txt    # Лог последнего прогона бенчмарков
 │   ├── baseline/           # Эталонные CSV для сравнения
@@ -58,6 +62,11 @@ cargo bench --bench baseline
 cargo +nightly miri test
 cargo +nightly miri run --bin demo
 
+# Полный пайплайн: бенчмарки + графики
+./scripts/compare.sh
+
+# Сравнение с baseline
+./scripts/compare.sh --compare
 ```
 
 ## Описание модулей
@@ -86,6 +95,24 @@ cargo +nightly miri run --bin demo
 | `race_increment(iterations, threads) -> u64` | Многопоточный инкремент через `AtomicU64` (Relaxed ordering) |
 | `read_after_sleep() -> u64` | Чтение счётчика после паузы 10ms |
 | `reset_counter()` | Сброс глобального счётчика |
+
+## Скрипты
+
+### `compare.sh`
+
+```bash
+./scripts/compare.sh              # Запуск бенчмарков + графики
+./scripts/compare.sh --baseline   # Генерация baseline CSV из artifacts/baseline/
+./scripts/compare.sh --compare    # Сравнение текущих результатов с baseline
+```
+
+### `plot_benches.py`
+
+```bash
+python3 scripts/plot_benches.py                                    # Графики из target/criterion
+python3 scripts/plot_benches.py --criterion-dir artifacts/baseline  # Из произвольной папки
+python3 scripts/plot_benches.py --compare artifacts/baseline/all_benchmarks.csv  # Сравнение
+```
 
 ## Инструменты анализа
 
