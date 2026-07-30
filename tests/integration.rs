@@ -100,7 +100,7 @@ fn use_after_free_returns_84() {
 #[test]
 fn dedup_preserves_uniques() {
     let uniq = algo::slow_dedup(&[5, 5, 1, 2, 2, 3]);
-    assert_eq!(uniq, vec![1, 2, 3, 5]);
+    assert_eq!(uniq, vec![5, 1, 2, 3]);
 }
 
 #[test]

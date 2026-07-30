@@ -1,6 +1,7 @@
 
 pub mod algo;
 pub mod concurrency;
+use std::boxed::Box;
 
 /// Сумма чётных значений.
 pub fn sum_even(values: &[i64]) -> i64 {

@@ -1,3 +1,5 @@
+use std::vec::Vec;
+
 /// Оптимизированная реализация: O(n) с HashSet вместо O(n²) + сортировка.
 pub fn slow_dedup(values: &[u64]) -> Vec<u64> {
     use std::collections::HashSet;
